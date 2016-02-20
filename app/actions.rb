@@ -17,6 +17,11 @@ get '/messages/:id' do
   erb :'messages/show'
 end
 
+# get '/:url' do
+#   @message = Message.find params[:url]
+#   erb :''
+# end
+
 post '/messages' do
   @message = Message.new(
     content: params[:content],

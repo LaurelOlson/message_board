@@ -3,7 +3,7 @@
 
 <% @messages.each do |message| %>
   <div class="message">
-    <h3><a href="/messages/<%= message.id %>"><%= message.author %></a> <small><%= message.url %></small></h3>
+    <h3><a href="/messages/<%= message.id %>"><%= message.author %></a> <small><a href="<%= message.url %>"><%= message.url %></a></small></h3>
     <p>
       <%= message.content %>
     </p>
