@@ -7,12 +7,21 @@
 </p>
 
 <p>
-  <%= @message.url %>
+  url: <%= @message.url %>
 </p>
 
 <p>
   <small>created at: <%= @message.created_at %></small>
 </p>
+
+<p>
+  Other messages by <%= @message.author %>:
+  <br><% Message.where(author: @message.author).to_a.each do |message| %> 
+    <br><%= message.content %> <small><%= message.url %></small>
+    <br><small>created at: <%= message.created_at %></small><br>
+  <% end %>
+</p>
+
 
 <hr/>
 <a href="/messages">Back to All Messages</a>
